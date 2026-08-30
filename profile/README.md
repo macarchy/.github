@@ -2,6 +2,8 @@
 
 **The macOS experience for [Omarchy](https://omarchy.org) on Apple Silicon.**
 
+![Apple Glass theme with the aquarium background](desktop.png)
+
 A MacBook running Omarchy on [Asahi Linux](https://asahilinux.org) deserves to
 feel like the machine it was built to be. These repos make that happen —
 independent community work, not affiliated with the Omarchy project.
