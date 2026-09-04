@@ -10,8 +10,8 @@ independent community work, not affiliated with the Omarchy project.
 
 ## Quick start
 
-One command, from a fresh Omarchy-on-Asahi install to the desktop — the
-omarchy-mac suite, the Touch Bar, the aquarium and both apple-glass themes:
+One command, from a fresh Omarchy-on-Asahi install to the desktop: the
+omarchy-mac suite, the Touch Bar, the aquarium and both apple-glass themes.
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/macarchy/macarchy-install/main/boot.sh | bash
@@ -20,7 +20,7 @@ curl -fsSL https://raw.githubusercontent.com/macarchy/macarchy-install/main/boot
 It clones those five repos, runs the omarchy-mac and macarchy-dfr installers,
 builds and installs the aquarium, syncs the two themes into
 `~/.config/omarchy/themes`, appends the Hyprland autostarts and binds once, and
-skips whatever is already done — so re-running it is also how you update.
+skips whatever is already done, so re-running it is also how you update.
 `./doctor.sh` in that repo is the read-only answer to *"is any of this actually
 running?"*. `omarchy-aikit` and `jarvis` are not part of it; each installs
 itself from its own repo.
