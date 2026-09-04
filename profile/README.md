@@ -10,15 +10,20 @@ independent community work, not affiliated with the Omarchy project.
 
 ## Quick start
 
-One command, from a fresh Omarchy-on-Asahi install to all of it:
+One command, from a fresh Omarchy-on-Asahi install to the desktop — the
+omarchy-mac suite, the Touch Bar, the aquarium and both apple-glass themes:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/macarchy/macarchy-install/main/boot.sh | bash
 ```
 
-It clones each repo, runs its installer, wires up Hyprland, and skips whatever
-is already done — so re-running it is also how you update. `./doctor.sh` in
-that repo is the read-only answer to *"is any of this actually running?"*.
+It clones those five repos, runs the omarchy-mac and macarchy-dfr installers,
+builds and installs the aquarium, syncs the two themes into
+`~/.config/omarchy/themes`, appends the Hyprland autostarts and binds once, and
+skips whatever is already done — so re-running it is also how you update.
+`./doctor.sh` in that repo is the read-only answer to *"is any of this actually
+running?"*. `omarchy-aikit` and `jarvis` are not part of it; each installs
+itself from its own repo.
 
 Or take one piece at a time:
 
@@ -27,8 +32,10 @@ Or take one piece at a time:
 omarchy-theme-install https://github.com/macarchy/apple-glass
 omarchy-theme-install https://github.com/macarchy/apple-glass-light
 
-# the suite
-git clone https://github.com/macarchy/omarchy-mac && omarchy-mac/install.sh
+# the suite (--udev also lays down the battery-limit rule and trackpad quirks)
+git clone https://github.com/macarchy/omarchy-mac && omarchy-mac/install.sh --udev
+# it wires the Cmd keys and Cmd+Tab only; copy the dock, auto-brightness, pinch
+# and Ctrl+scroll zoom lines from omarchy-mac/hypr/example.lua yourself
 
 # the aquarium
 git clone https://github.com/macarchy/omarchy-aquarium && omarchy-aquarium/install.sh
@@ -47,7 +54,7 @@ wants the hardware but not Omarchy — it reads Hyprland directly.
 
 | Repo | What it is |
 | --- | --- |
-| [macarchy-install](https://github.com/macarchy/macarchy-install) | The one-command installer, and the place to start if you want the whole thing: it clones every repo below, runs each installer, appends the Hyprland wiring once, and leaves your local edits alone. Ships a `doctor.sh` health check. |
+| [macarchy-install](https://github.com/macarchy/macarchy-install) | The one-command installer, and the place to start if you want the desktop in one go: it clones five of the repos below — omarchy-mac, macarchy-dfr, omarchy-aquarium and the two apple-glass themes — installs each, appends the Hyprland wiring once, and leaves your local edits alone. Ships a `doctor.sh` health check. It does not touch `omarchy-aikit` or `jarvis`: those two install themselves. |
 | [omarchy-mac](https://github.com/macarchy/omarchy-mac) | The core suite, for anyone who misses macOS's reflexes on a MacBook running Linux: ambient-light **auto brightness**, an 80% **battery charge limit**, a macOS-style **dock**, four-finger **pinch gestures**, a `Ctrl`+scroll screen **magnifier**, the full **Cmd-key vocabulary**, a **Cmd+Tab** switcher, scheduled light/dark **appearance**, and GTK theme sync. |
 | [macarchy-dfr](https://github.com/macarchy/macarchy-dfr) | The **Touch Bar**, drawn by us — a Python daemon that owns the panel over DRM and its touch surface over evdev instead of settling for a function-key strip. Layouts follow the focused window; widgets, groups and scenes come from modules you can write. For Touch Bar MacBook owners on Linux, with or without Omarchy. |
 
