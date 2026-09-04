@@ -54,7 +54,7 @@ wants the hardware but not Omarchy — it reads Hyprland directly.
 
 | Repo | What it is |
 | --- | --- |
-| [macarchy-install](https://github.com/macarchy/macarchy-install) | The one-command installer, and the place to start if you want the desktop in one go: it clones five of the repos below — macarchy-core, macarchy-touchbar, omarchy-aquarium and the two apple-glass themes — installs each, appends the Hyprland wiring once, and leaves your local edits alone. Ships a `doctor.sh` health check. It does not touch `omarchy-aikit` or `jarvis`: those two install themselves. |
+| [macarchy-install](https://github.com/macarchy/macarchy-install) | The one-command installer, and the place to start if you want the desktop in one go: it clones six of the repos below — macarchy-core, macarchy-touchbar, macos-dynamic-wallpaper, omarchy-aquarium and the two apple-glass themes — installs each, appends the Hyprland wiring once, and leaves your local edits alone. Ships a `doctor.sh` health check. It does not touch `omarchy-aikit` or `jarvis`: those two install themselves. |
 | [macarchy-core](https://github.com/macarchy/macarchy-core) | The core suite, for anyone who misses macOS's reflexes on a MacBook running Linux: ambient-light **auto brightness**, an 80% **battery charge limit**, a macOS-style **dock**, four-finger **pinch gestures**, a `Ctrl`+scroll screen **magnifier**, the full **Cmd-key vocabulary**, a **Cmd+Tab** switcher, scheduled light/dark **appearance**, and GTK theme sync. |
 | [macarchy-touchbar](https://github.com/macarchy/macarchy-touchbar) | The **Touch Bar**, drawn by us — a Python daemon that owns the panel over DRM and its touch surface over evdev instead of settling for a function-key strip. Layouts follow the focused window; widgets, groups and scenes come from modules you can write. For Touch Bar MacBook owners on Linux, with or without Omarchy. |
 
@@ -64,6 +64,7 @@ wants the hardware but not Omarchy — it reads Hyprland directly.
 | --- | --- |
 | [apple-glass](https://github.com/macarchy/apple-glass) | The dark glass theme: translucent blur and vibrancy, tuned against the aquarium. For any Omarchy desktop. |
 | [apple-glass-light](https://github.com/macarchy/apple-glass-light) | Its daylight counterpart — the two switch on a schedule, like macOS's Auto appearance. |
+| [macos-dynamic-wallpaper](https://github.com/macarchy/macos-dynamic-wallpaper) | The **macOS dynamic desktop**: one wallpaper set, four times of day, and the background follows the real sun at your coordinates — NOAA solar math, so no network and no location service. A oneshot service behind a five-minute timer, not a daemon. For any Omarchy desktop. |
 | [omarchy-aikit](https://github.com/macarchy/omarchy-aikit) | Your backlog, one keystroke from the bar: pick a repository, pick an [AI Migration Kit](https://github.com/phmatray/ai-migration-kit) skill for Claude Code, and the session starts in tmux. A cross-repo work queue answers *"what should I work on?"*, and the menus read a local SQLite mirror, so none of them ever waits on the network. For anyone running Claude Code across more repositories than they can hold in their head. |
 
 ![Apple Glass, the bar and the dock](desktop.png)
@@ -86,8 +87,9 @@ place it runs:
   installed and supported. `omarchy-aikit`, `omarchy-aquarium` — the aquarium
   also runs on any wlroots compositor.
 - **no prefix** — named for what it is rather than what it needs.
-  `apple-glass` and `apple-glass-light` are Omarchy themes; `jarvis` wants only
-  a Linux box with a microphone.
+  `apple-glass` and `apple-glass-light` are Omarchy themes and
+  `macos-dynamic-wallpaper` is an Omarchy tool, all three named after what they
+  recreate; `jarvis` wants only a Linux box with a microphone.
 
 Names do change when they turn out to be wrong: on 2026-09-04 `omarchy-mac`
 became `macarchy-core`, because it collided with the unrelated upstream distro
