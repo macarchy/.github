@@ -54,7 +54,7 @@ Four specific defects, each verified before it was written down:
    that below the fold.
 3. **Fix the front door and the broken self-references.** The org profile
    listed five of eight repos, omitted the installer, and asked people to
-   clone three repos by hand. The aikit's links pointed at the old org.
+   clone two repos by hand. The aikit's links pointed at the old org.
 4. **Write down what only this project can say.** The theme READMEs were
    21-line stubs; the blur numbers, the measured-contrast palette and the
    fact that both were tuned against the animated aquarium existed only in
@@ -80,8 +80,8 @@ outside GitHub.
 
 Repo metadata was set directly with `gh repo edit` (not via PR), and the pass
 was redone across all nine repos rather than the two it started with. Every
-description was rewritten to fit under 110 characters — the point where GitHub
-search results and the org page truncate — and every code repo now carries
+description was rewritten to 110 characters or fewer — around where GitHub
+search results and topic pages truncate — and every code repo now carries
 12–18 topics. Two corrections worth naming: `omarchy-mac` lost the stale
 `touchbar` topic (the Touch Bar moved out to `macarchy-dfr`), and
 `macarchy-dfr` carries both `touch-bar` and `touchbar`, since people search
