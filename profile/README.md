@@ -77,17 +77,26 @@ wants the hardware but not Omarchy — it reads Hyprland directly.
 
 ## Naming
 
-The prefix says what a repo needs, and it does not change once set:
+The prefix records what a repo was built for — not a promise about the only
+place it runs:
 
-- **`macarchy-*`** — needs Apple hardware; part of the macarchy suite proper.
-  `macarchy-core`, `macarchy-touchbar`, `macarchy-install`.
-- **`omarchy-*`** — works on any Omarchy install. `omarchy-aquarium`,
-  `omarchy-aikit`.
-- **no prefix** — a standalone product, usable anywhere. `apple-glass`,
-  `apple-glass-light`, `jarvis`.
+- **`macarchy-*`** — needs Apple hardware. `macarchy-core`,
+  `macarchy-touchbar`, `macarchy-install`.
+- **`omarchy-*`** — built for the Omarchy desktop, which is where it is
+  installed and supported. `omarchy-aikit`, `omarchy-aquarium` — the aquarium
+  also runs on any wlroots compositor.
+- **no prefix** — named for what it is rather than what it needs.
+  `apple-glass` and `apple-glass-light` are Omarchy themes; `jarvis` wants only
+  a Linux box with a microphone.
 
-Installed commands follow the same rule, so a `macarchy-*` command can never
-collide with one that upstream Omarchy ships.
+Names do change when they turn out to be wrong: on 2026-09-04 `omarchy-mac`
+became `macarchy-core`, because it collided with the unrelated upstream distro
+of that name, and `macarchy-dfr` became `macarchy-touchbar`, because "DFR" is
+jargon.
+
+The installed commands moved to `macarchy-*` in the same pass. That takes them
+out of the namespace upstream Omarchy expands into, so an upstream command can
+no longer shadow one of ours through PATH order.
 
 Built and tuned on a MacBook Pro (13-inch, M2) — issues and reports from other
 Apple Silicon machines are very welcome.
